@@ -31,11 +31,13 @@ html {
 body {
     min-height: 100vh;
     overflow-x: hidden;
+
     background:
         radial-gradient(circle at 15% 20%, rgba(255,85,170,.10), transparent 25%),
         radial-gradient(circle at 85% 35%, rgba(80,170,255,.10), transparent 28%),
         radial-gradient(circle at 50% 80%, rgba(170,90,255,.08), transparent 30%),
         #050507;
+
     color: white;
     font-family: "DM Sans", sans-serif;
 }
@@ -70,8 +72,10 @@ section {
 .noise {
     position: fixed;
     inset: 0;
+
     pointer-events: none;
     z-index: -1;
+
     opacity: .035;
 
     background-image:
@@ -93,6 +97,7 @@ section {
 .sound-start {
     position: fixed;
     inset: 0;
+
     z-index: 100000;
 
     display: flex;
@@ -124,19 +129,23 @@ section {
 
 .sound-start p {
     margin-top: 14px;
+
     color: #777;
+
     font-size: 8px;
     letter-spacing: 5px;
 }
 
 .sound-start button {
     margin-top: 32px;
+
     padding: 16px 28px;
 
     border: 1px solid rgba(255,255,255,.25);
     border-radius: 999px;
 
     background: rgba(255,255,255,.05);
+
     color: white;
 
     font-size: 9px;
@@ -150,12 +159,13 @@ section {
 
 
 /* =========================================================
-   CINEMATIC INTRO
+   INTRO
 ========================================================= */
 
 .intro-screen {
     position: fixed;
     inset: 0;
+
     z-index: 99999;
 
     display: flex;
@@ -163,6 +173,7 @@ section {
     justify-content: center;
 
     overflow: hidden;
+
     background: #020203;
 
     transition:
@@ -185,6 +196,7 @@ section {
     border-radius: 50%;
 
     filter: blur(150px);
+
     opacity: .16;
 
     animation: introGlow 5s ease-in-out infinite alternate;
@@ -241,9 +253,11 @@ section {
 
 .intro-content {
     position: relative;
+
     z-index: 5;
 
     width: 100%;
+
     text-align: center;
 }
 
@@ -255,9 +269,12 @@ section {
 
     width: 100%;
 
-    transform: translate(-50%,-50%) scale(.94);
+    transform:
+        translate(-50%,-50%)
+        scale(.94);
 
     opacity: 0;
+
     filter: blur(10px);
 
     transition:
@@ -268,6 +285,7 @@ section {
 
 .intro-scene.active {
     opacity: 1;
+
     filter: blur(0);
 
     transform:
@@ -281,14 +299,14 @@ section {
     color: #777;
 
     font-size: 9px;
+
     letter-spacing: 7px;
 }
 
 .intro-big {
     font-family: "Playfair Display", serif;
 
-    font-size:
-        clamp(50px,10vw,125px);
+    font-size: clamp(50px,10vw,125px);
 
     line-height: .9;
 }
@@ -314,6 +332,7 @@ section {
     color: #aaa;
 
     font-size: 9px;
+
     letter-spacing: 6px;
 }
 
@@ -364,17 +383,18 @@ section {
 
     right: 25px;
 
-    bottom:
-        calc(25px + env(safe-area-inset-bottom));
+    bottom: calc(25px + env(safe-area-inset-bottom));
 
     z-index: 10;
 
     border: none;
+
     background: transparent;
 
     color: #777;
 
     font-size: 8px;
+
     letter-spacing: 3px;
 
     cursor: pointer;
@@ -394,6 +414,7 @@ nav {
     z-index: 1000;
 
     width: 100%;
+
     min-height: 68px;
 
     padding:
@@ -402,6 +423,7 @@ nav {
         18px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -416,12 +438,15 @@ nav {
 
 .logo {
     font-size: 11px;
+
     font-weight: 800;
+
     letter-spacing: 4px;
 }
 
 .nav-links {
     display: flex;
+
     gap: 22px;
 }
 
@@ -431,13 +456,8 @@ nav {
     text-decoration: none;
 
     font-size: 9px;
+
     letter-spacing: 1px;
-
-    transition: color .25s ease;
-}
-
-.nav-links a:hover {
-    color: white;
 }
 
 
@@ -454,6 +474,7 @@ nav {
     padding: 120px 20px 70px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -521,18 +542,13 @@ nav {
     left: 50%;
     top: 50%;
 
-    transform:
-        translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
-    font-size:
-        clamp(170px,32vw,500px);
+    font-size: clamp(170px,32vw,500px);
 
-    color:
-        rgba(255,255,255,.025);
+    color: rgba(255,255,255,.025);
 }
 
 .hero-content {
@@ -547,16 +563,14 @@ nav {
     color: #777;
 
     font-size: 8px;
+
     letter-spacing: 7px;
 }
 
 .hero h1 {
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
-    font-size:
-        clamp(72px,13vw,175px);
+    font-size: clamp(72px,13vw,175px);
 
     line-height: .76;
 
@@ -589,6 +603,7 @@ nav {
     gap: 12px 28px;
 
     font-size: 9px;
+
     letter-spacing: 3px;
 }
 
@@ -610,6 +625,7 @@ nav {
     color: #999;
 
     font-size: 9px;
+
     letter-spacing: 3px;
 }
 
@@ -631,12 +647,13 @@ nav {
     text-decoration: none;
 
     font-size: 7px;
+
     letter-spacing: 4px;
 }
 
 
 /* =========================================================
-   COMMON TITLES
+   SECTION TITLES
 ========================================================= */
 
 .section-kicker {
@@ -645,16 +662,14 @@ nav {
     color: #666;
 
     font-size: 8px;
+
     letter-spacing: 5px;
 }
 
 .section-title {
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
-    font-size:
-        clamp(45px,7vw,85px);
+    font-size: clamp(45px,7vw,85px);
 
     line-height: .95;
 }
@@ -685,18 +700,13 @@ nav {
     left: 50%;
     top: 50%;
 
-    transform:
-        translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
-    font-size:
-        clamp(260px,45vw,650px);
+    font-size: clamp(260px,45vw,650px);
 
-    color:
-        rgba(255,255,255,.018);
+    color: rgba(255,255,255,.018);
 }
 
 .countdown-inner {
@@ -738,12 +748,9 @@ nav {
 .time-box span {
     display: block;
 
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
-    font-size:
-        clamp(42px,6vw,80px);
+    font-size: clamp(42px,6vw,80px);
 }
 
 .time-box small {
@@ -754,6 +761,7 @@ nav {
     color: #666;
 
     font-size: 7px;
+
     letter-spacing: 3px;
 }
 
@@ -763,6 +771,7 @@ nav {
     color: #777;
 
     font-size: 8px;
+
     letter-spacing: 4px;
 }
 
@@ -787,6 +796,7 @@ nav {
     color: #666;
 
     font-size: 7px;
+
     letter-spacing: 3px;
 }
 
@@ -824,8 +834,7 @@ nav {
     -webkit-transform-style: preserve-3d;
 
     transition:
-        transform .9s
-        cubic-bezier(.2,.7,.2,1);
+        transform .9s cubic-bezier(.2,.7,.2,1);
 
     will-change: transform;
 }
@@ -862,7 +871,7 @@ nav {
     will-change: transform;
 }
 
-.member-front * ,
+.member-front *,
 .member-back * {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -896,6 +905,7 @@ nav {
 
 .member-flip.flipped .member-front {
     z-index: 1;
+
     pointer-events: none;
 }
 
@@ -935,6 +945,7 @@ nav {
     color: #ddd;
 
     font-size: 8px;
+
     letter-spacing: 4px;
 }
 
@@ -961,9 +972,6 @@ nav {
 
     background:
         rgba(0,0,0,.4);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .member-front-info {
@@ -982,15 +990,14 @@ nav {
     color: #bbb;
 
     font-size: 8px;
+
     letter-spacing: 3px;
 }
 
 .member-front-info h3 {
     margin-top: 5px;
 
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-size: 48px;
 }
@@ -1001,11 +1008,12 @@ nav {
     color: #999;
 
     font-size: 8px;
+
     letter-spacing: 3px;
 }
 
 
-/* MEMBER PROFILE BACK */
+/* MEMBER BACK */
 
 .member-back {
     padding: 30px;
@@ -1021,31 +1029,19 @@ nav {
 
 .member-back.danu {
     background:
-        radial-gradient(
-            circle at top left,
-            rgba(255,76,166,.18),
-            transparent 45%
-        ),
+        radial-gradient(circle at top left, rgba(255,76,166,.18), transparent 45%),
         #09090e;
 }
 
 .member-back.taksha {
     background:
-        radial-gradient(
-            circle at top left,
-            rgba(75,188,255,.18),
-            transparent 45%
-        ),
+        radial-gradient(circle at top left, rgba(75,188,255,.18), transparent 45%),
         #09090e;
 }
 
 .member-back.sofia {
     background:
-        radial-gradient(
-            circle at top left,
-            rgba(168,85,255,.18),
-            transparent 45%
-        ),
+        radial-gradient(circle at top left, rgba(168,85,255,.18), transparent 45%),
         #09090e;
 }
 
@@ -1057,15 +1053,14 @@ nav {
     color: #777;
 
     font-size: 7px;
+
     letter-spacing: 3px;
 }
 
 .pass-name {
     margin-top: 55px;
 
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-size: 48px;
 }
@@ -1076,6 +1071,7 @@ nav {
     color: #777;
 
     font-size: 8px;
+
     letter-spacing: 3px;
 }
 
@@ -1105,15 +1101,14 @@ nav {
     color: #666;
 
     font-size: 7px;
+
     letter-spacing: 2px;
 }
 
 .profile-quote {
     margin-top: 30px;
 
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-style: italic;
 
@@ -1149,12 +1144,13 @@ nav {
     color: #777;
 
     font-size: 7px;
+
     letter-spacing: 2px;
 }
 
 
 /* =========================================================
-   OFFICIAL TRIP PASS
+   DARK NEON TRIP PASS
 ========================================================= */
 
 .trip-section {
@@ -1165,21 +1161,12 @@ nav {
     overflow: hidden;
 }
 
-
-/*
-   IMPORTANT:
-   This ticket is deliberately LONG + HORIZONTAL.
-*/
-
 .ticket-wrap {
-    width:
-        min(1100px,94vw);
+    width: min(1100px,94vw);
 
-    aspect-ratio:
-        2.35 / 1;
+    aspect-ratio: 2.35 / 1;
 
-    margin:
-        55px auto 0;
+    margin: 55px auto 0;
 
     perspective: 1800px;
     -webkit-perspective: 1800px;
@@ -1199,18 +1186,12 @@ nav {
     -webkit-transform-style: preserve-3d;
 
     transition:
-        transform .9s
-        cubic-bezier(.2,.7,.2,1);
-
-    will-change: transform;
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
 .ticket-wrap.flipped .ticket {
-    transform:
-        rotateY(180deg);
-
-    -webkit-transform:
-        rotateY(180deg);
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
 .ticket-front,
@@ -1231,15 +1212,16 @@ nav {
     backface-visibility:
         hidden !important;
 
+    border:
+        1px solid rgba(255,255,255,.12);
+
     box-shadow:
-        0 35px 100px rgba(0,0,0,.45),
-        0 0 45px rgba(180,150,255,.1);
+        0 35px 100px rgba(0,0,0,.7),
+        0 0 40px rgba(168,85,255,.15);
 }
 
 
-/* =========================================================
-   TICKET FRONT — HOLOGRAPHIC
-========================================================= */
+/* FRONT */
 
 .ticket-front {
     z-index: 2;
@@ -1252,90 +1234,37 @@ nav {
         rotateY(0deg)
         translateZ(2px);
 
-    color: #17131d;
+    color: white;
 
     background:
         radial-gradient(
-            circle at 12% 90%,
-            rgba(255,114,185,.65),
-            transparent 35%
+            circle at 10% 20%,
+            rgba(255,36,145,.22),
+            transparent 30%
         ),
 
         radial-gradient(
-            circle at 42% 15%,
-            rgba(255,255,255,.80),
-            transparent 28%
+            circle at 85% 25%,
+            rgba(36,173,255,.20),
+            transparent 32%
         ),
 
         radial-gradient(
-            circle at 75% 75%,
-            rgba(132,194,255,.70),
+            circle at 55% 100%,
+            rgba(169,62,255,.25),
             transparent 38%
         ),
 
         linear-gradient(
-            115deg,
-            #ffb7d7 0%,
-            #ffd7eb 18%,
-            #e7d9ff 42%,
-            #b9dcff 67%,
-            #e7caff 83%,
-            #ffbddb 100%
+            135deg,
+            #050509,
+            #0b0912 45%,
+            #050509
         );
 }
 
 
-/* HOLOGRAPHIC SHINE */
-
-.ticket-front::before {
-    content: "";
-
-    position: absolute;
-
-    width: 65%;
-    height: 180%;
-
-    left: 15%;
-    top: -45%;
-
-    transform: rotate(20deg);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.48),
-            rgba(255,255,255,.08),
-            transparent
-        );
-
-    filter: blur(5px);
-
-    animation:
-        ticketShine 6s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-@keyframes ticketShine {
-
-    0%,
-    25% {
-        transform:
-            translateX(-90%)
-            rotate(20deg);
-    }
-
-    60%,
-    100% {
-        transform:
-            translateX(120%)
-            rotate(20deg);
-    }
-}
-
-
-/* HOLOGRAPHIC TEXTURE */
+/* NEON BORDER */
 
 .ticket-front::after {
     content: "";
@@ -1343,20 +1272,82 @@ nav {
     position: absolute;
     inset: 0;
 
-    opacity: .10;
+    border-radius: 30px;
+
+    padding: 1px;
 
     background:
-        repeating-linear-gradient(
-            115deg,
-            transparent 0,
-            transparent 12px,
-            rgba(255,255,255,.35) 13px,
-            transparent 14px
+        linear-gradient(
+            110deg,
+            #ff2b9d,
+            #8758ff,
+            #36baff,
+            #8758ff,
+            #ff2b9d
         );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    opacity: .8;
 
     pointer-events: none;
 }
 
+
+/* MOVING NEON SHINE */
+
+.ticket-front::before {
+    content: "";
+
+    position: absolute;
+
+    width: 50%;
+    height: 200%;
+
+    left: -70%;
+    top: -50%;
+
+    transform: rotate(20deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,43,157,.12),
+            rgba(54,186,255,.15),
+            rgba(167,75,255,.12),
+            transparent
+        );
+
+    filter: blur(8px);
+
+    animation:
+        neonTicketShine 6s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes neonTicketShine {
+
+    0%,
+    25% {
+        left: -70%;
+    }
+
+    70%,
+    100% {
+        left: 120%;
+    }
+}
+
+
+/* TICKET LAYOUT */
 
 .ticket-layout {
     position: relative;
@@ -1373,9 +1364,7 @@ nav {
 }
 
 
-/* =========================================================
-   TICKET LEFT
-========================================================= */
+/* MAIN */
 
 .ticket-main {
     position: relative;
@@ -1386,11 +1375,44 @@ nav {
     text-align: left;
 }
 
+.ticket-edition {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: #8b8b9b;
+
+    font-size:
+        clamp(5px,.7vw,9px);
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.ticket-edition::before {
+    content: "";
+
+    width: 35px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff2b9d,
+            #36baff
+        );
+
+    box-shadow:
+        0 0 8px #8758ff;
+}
 
 .ticket-brand {
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-size:
         clamp(38px,5.6vw,82px);
@@ -1400,151 +1422,158 @@ nav {
     line-height: .88;
 
     letter-spacing: -3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff5db4 0%,
+            #ffffff 32%,
+            #72ceff 65%,
+            #c077ff 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(168,85,255,.18)
+        );
 }
 
-
 .ticket-official {
-    margin-top: 10px;
+    margin-top: 12px;
+
+    color: #898797;
 
     font-size:
         clamp(6px,.75vw,10px);
 
-    font-weight: 800;
+    font-weight: 700;
 
     letter-spacing: 4px;
 }
 
 
 /* =========================================================
-   THREE TICKET PHOTOS
+   TRIO NAMES — NO PHOTOS
 ========================================================= */
 
-.ticket-people {
+.ticket-trio-display {
     position: absolute;
 
     left: 6%;
-    bottom: 25%;
+    right: 5%;
 
+    top: 53%;
+
+    transform:
+        translateY(-50%);
+}
+
+.ticket-trio-label {
+    margin-bottom: 12px;
+
+    color: #666474;
+
+    font-size:
+        clamp(5px,.65vw,8px);
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.ticket-trio-names {
     display: flex;
 
     align-items: center;
-}
 
-
-.ticket-photo {
-    position: relative;
-
-    width:
-        clamp(72px,10vw,145px);
-
-    aspect-ratio: 1;
-
-    overflow: hidden;
-
-    border-radius: 50%;
-
-    border:
-        clamp(2px,.25vw,4px)
-        solid rgba(255,255,255,.95);
-
-    background: white;
-
-    box-shadow:
-        0 10px 30px
-        rgba(80,50,110,.2);
-}
-
-
-.ticket-photo + .ticket-photo {
-    margin-left: -20px;
-}
-
-
-.ticket-photo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position:
-        center 25%;
-}
-
-
-/* DANU PINK */
-
-.ticket-photo.danu {
-    box-shadow:
-        0 0 0 2px rgba(255,103,178,.4),
-        0 10px 30px rgba(100,50,100,.15);
-}
-
-
-/* TAKSHA BLUE */
-
-.ticket-photo.taksha {
-    box-shadow:
-        0 0 0 2px rgba(91,184,255,.4),
-        0 10px 30px rgba(50,80,120,.15);
-}
-
-
-/* SOFIA PURPLE */
-
-.ticket-photo.sofia {
-    box-shadow:
-        0 0 0 2px rgba(170,110,255,.4),
-        0 10px 30px rgba(80,50,120,.15);
-}
-
-
-/* NAMES */
-
-.ticket-trio {
-    position: absolute;
-
-    left: 48%;
-    bottom: 35%;
+    gap:
+        clamp(10px,1.6vw,25px);
 
     font-size:
-        clamp(7px,1vw,14px);
+        clamp(14px,2vw,28px);
 
     font-weight: 800;
 
     letter-spacing: 2px;
+}
 
-    white-space: nowrap;
+.ticket-trio-names .danu {
+    color: #ff55ad;
+
+    text-shadow:
+        0 0 12px
+        rgba(255,55,160,.55);
+}
+
+.ticket-trio-names .taksha {
+    color: #5bc7ff;
+
+    text-shadow:
+        0 0 12px
+        rgba(55,185,255,.55);
+}
+
+.ticket-trio-names .sofia {
+    color: #bb72ff;
+
+    text-shadow:
+        0 0 12px
+        rgba(174,86,255,.55);
+}
+
+.ticket-divider-dot {
+    width: 5px;
+    height: 5px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: .35;
+
+    box-shadow:
+        0 0 10px white;
 }
 
 
-/* =========================================================
-   TICKET INFORMATION
-========================================================= */
+/* DETAILS */
 
 .ticket-information {
     position: absolute;
 
     left: 6%;
     right: 5%;
-    bottom: 6%;
+    bottom: 7%;
 
     display: grid;
 
     grid-template-columns:
-        1fr 1.6fr .6fr;
+        .9fr 1.5fr .5fr;
 
     gap: 30px;
 
     text-align: left;
-}
 
+    padding-top: 16px;
+
+    border-top:
+        1px solid rgba(255,255,255,.10);
+}
 
 .ticket-data-label {
     display: block;
 
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 
-    opacity: .55;
+    color: #666474;
 
     font-size:
         clamp(5px,.6vw,8px);
@@ -1554,8 +1583,9 @@ nav {
     letter-spacing: 2px;
 }
 
-
 .ticket-data-value {
+    color: #f5f4ff;
+
     font-size:
         clamp(7px,.9vw,12px);
 
@@ -1576,8 +1606,7 @@ nav {
         12% 12% 10%;
 
     border-left:
-        2px dashed
-        rgba(35,28,45,.28);
+        1px dashed rgba(255,255,255,.22);
 
     display: flex;
 
@@ -1586,10 +1615,15 @@ nav {
     align-items: center;
 
     text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,43,157,.05),
+            rgba(54,186,255,.05),
+            rgba(168,85,255,.07)
+        );
 }
-
-
-/* TICKET HOLES */
 
 .ticket-stub::before,
 .ticket-stub::after {
@@ -1605,8 +1639,6 @@ nav {
     border-radius: 50%;
 
     background: #050507;
-
-    z-index: 5;
 }
 
 .ticket-stub::before {
@@ -1617,8 +1649,9 @@ nav {
     bottom: -16px;
 }
 
-
 .stub-pass {
+    color: #777584;
+
     font-size:
         clamp(5px,.65vw,8px);
 
@@ -1627,9 +1660,8 @@ nav {
     letter-spacing: 3px;
 }
 
-
 .stub-number {
-    margin-top: 6%;
+    margin-top: 8%;
 
     font-family:
         "Playfair Display",
@@ -1638,9 +1670,19 @@ nav {
     font-size:
         clamp(18px,2.4vw,34px);
 
-    line-height: 1;
-}
+    background:
+        linear-gradient(
+            90deg,
+            #ff54ad,
+            #65caff,
+            #ba70ff
+        );
 
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
 
 .stub-barcode {
     width: 58%;
@@ -1655,23 +1697,26 @@ nav {
     background:
         repeating-linear-gradient(
             90deg,
-
-            #17131d 0 2px,
+            #ff55ad 0 2px,
             transparent 2px 4px,
-
-            #17131d 4px 5px,
+            #67caff 4px 5px,
             transparent 5px 8px,
-
-            #17131d 8px 11px,
+            #bd75ff 8px 11px,
             transparent 11px 13px,
-
-            #17131d 13px 14px,
+            white 13px 14px,
             transparent 14px 18px
+        );
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(168,85,255,.5)
         );
 }
 
-
 .stub-code {
+    color: #aaa8b5;
+
     font-size:
         clamp(5px,.65vw,8px);
 
@@ -1680,9 +1725,10 @@ nav {
     letter-spacing: 1.5px;
 }
 
-
 .stub-admit {
     margin-top: 5px;
+
+    color: #777584;
 
     font-size:
         clamp(5px,.55vw,7px);
@@ -1710,30 +1756,44 @@ nav {
 
     padding: 6%;
 
-    color: #17131d;
+    color: white;
 
     text-align: left;
 
     background:
         radial-gradient(
-            circle at 15% 80%,
-            rgba(255,120,190,.55),
-            transparent 40%
+            circle at 10% 80%,
+            rgba(255,43,157,.17),
+            transparent 35%
         ),
 
         radial-gradient(
-            circle at 85% 25%,
-            rgba(120,190,255,.60),
-            transparent 38%
+            circle at 85% 20%,
+            rgba(54,186,255,.16),
+            transparent 35%
         ),
 
-        linear-gradient(
-            120deg,
-            #ffd0e5,
-            #e5dcff,
-            #bee1ff,
-            #e5cfff
-        );
+        radial-gradient(
+            circle at 60% 100%,
+            rgba(168,85,255,.18),
+            transparent 40%
+        ),
+
+        #08070d;
+}
+
+.ticket-back::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 30px;
+
+    border:
+        1px solid rgba(168,85,255,.25);
+
+    pointer-events: none;
 }
 
 .ticket-wrap.flipped .ticket-front {
@@ -1744,8 +1804,9 @@ nav {
     z-index: 2;
 }
 
-
 .ticket-back-small {
+    color: #777584;
+
     font-size:
         clamp(6px,.7vw,9px);
 
@@ -1753,7 +1814,6 @@ nav {
 
     letter-spacing: 4px;
 }
-
 
 .ticket-back h3 {
     margin-top: 10px;
@@ -1764,8 +1824,21 @@ nav {
 
     font-size:
         clamp(30px,5vw,65px);
-}
 
+    background:
+        linear-gradient(
+            90deg,
+            #ff5bad,
+            #ffffff,
+            #65caff,
+            #bb72ff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
 
 .ticket-rules {
     margin-top: 5%;
@@ -1778,19 +1851,19 @@ nav {
     gap: 8px 35px;
 }
 
-
 .ticket-rule {
     padding: 12px 0;
 
     border-bottom:
-        1px solid rgba(25,20,30,.18);
+        1px solid rgba(255,255,255,.08);
+
+    color: #cbc9d2;
 
     font-size:
         clamp(7px,1vw,13px);
 
     font-weight: 600;
 }
-
 
 .ticket-back-footer {
     position: absolute;
@@ -1805,6 +1878,8 @@ nav {
 
     gap: 20px;
 
+    color: #686674;
+
     font-size:
         clamp(5px,.65vw,8px);
 
@@ -1812,7 +1887,6 @@ nav {
 
     letter-spacing: 2px;
 }
-
 
 .ticket-hint {
     margin-top: 22px;
@@ -1831,6 +1905,7 @@ nav {
 
 .comeback-film {
     width: 100%;
+
     max-width: 100%;
 
     padding:
@@ -1842,7 +1917,6 @@ nav {
     overflow: hidden;
 }
 
-
 .after-line {
     color: #777;
 
@@ -1852,7 +1926,6 @@ nav {
 
     line-height: 2;
 }
-
 
 .film-title {
     width: 100%;
@@ -1885,7 +1958,6 @@ nav {
     color: transparent;
 }
 
-
 .film-subtitle {
     margin-top: 25px;
 
@@ -1896,18 +1968,14 @@ nav {
     letter-spacing: 5px;
 }
 
-
 .mv-player {
     position: relative;
 
-    width:
-        min(100%,1150px);
+    width: min(100%,1150px);
 
-    aspect-ratio:
-        16 / 9;
+    aspect-ratio: 16 / 9;
 
-    margin:
-        55px auto 0;
+    margin: 55px auto 0;
 
     overflow: hidden;
 
@@ -1935,14 +2003,12 @@ nav {
         0 40px 100px rgba(0,0,0,.55);
 }
 
-
 .mv-player video {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 }
-
 
 .mv-cover {
     position: absolute;
@@ -1962,12 +2028,10 @@ nav {
             rgba(0,0,0,.4),
             rgba(80,170,255,.10)
         ),
-
         #09090d;
 
     transition: .6s;
 }
-
 
 .mv-cover.hide {
     opacity: 0;
@@ -1975,13 +2039,11 @@ nav {
     pointer-events: none;
 }
 
-
 .mv-content {
     width: 100%;
 
     padding: 20px;
 }
-
 
 .mv-label {
     color: #777;
@@ -1990,7 +2052,6 @@ nav {
 
     letter-spacing: 5px;
 }
-
 
 .mv-content h3 {
     margin-top: 10px;
@@ -2005,7 +2066,6 @@ nav {
     line-height: .9;
 }
 
-
 .mv-content p {
     margin-top: 14px;
 
@@ -2015,7 +2075,6 @@ nav {
 
     letter-spacing: 4px;
 }
-
 
 .play-film {
     margin-top: 28px;
@@ -2039,7 +2098,6 @@ nav {
     cursor: pointer;
 }
 
-
 .film-coming {
     margin-top: 18px;
 
@@ -2049,7 +2107,6 @@ nav {
 
     letter-spacing: 3px;
 }
-
 
 .film-meta {
     width:
@@ -2078,17 +2135,22 @@ nav {
     position: fixed;
 
     left:
-        calc(18px + env(safe-area-inset-left));
+        calc(
+            18px +
+            env(safe-area-inset-left)
+        );
 
     bottom:
-        calc(18px + env(safe-area-inset-bottom));
+        calc(
+            18px +
+            env(safe-area-inset-bottom)
+        );
 
     z-index: 900;
 
     min-width: 225px;
 
-    padding:
-        10px 13px;
+    padding: 10px 13px;
 
     display: flex;
 
@@ -2106,11 +2168,7 @@ nav {
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,.35);
 }
-
 
 .music-player button {
     width: 32px;
@@ -2131,11 +2189,9 @@ nav {
     cursor: pointer;
 }
 
-
 .music-info {
     flex: 1;
 }
-
 
 .music-info strong {
     display: block;
@@ -2144,7 +2200,6 @@ nav {
 
     letter-spacing: 2px;
 }
-
 
 .music-info span {
     display: block;
@@ -2158,7 +2213,6 @@ nav {
     letter-spacing: 2px;
 }
 
-
 .equalizer {
     display: flex;
 
@@ -2169,7 +2223,6 @@ nav {
     height: 18px;
 }
 
-
 .equalizer i {
     display: block;
 
@@ -2179,11 +2232,8 @@ nav {
     background: white;
 
     animation:
-        equalizer .65s
-        ease-in-out
-        infinite alternate;
+        equalizer .65s ease-in-out infinite alternate;
 }
-
 
 .equalizer i:nth-child(2) {
     animation-delay: .15s;
@@ -2197,13 +2247,11 @@ nav {
     animation-delay: .45s;
 }
 
-
 .music-player.paused .equalizer i {
     height: 4px;
 
     animation: none;
 }
-
 
 @keyframes equalizer {
 
@@ -2224,7 +2272,10 @@ nav {
 footer {
     padding:
         100px 20px
-        calc(100px + env(safe-area-inset-bottom));
+        calc(
+            100px +
+            env(safe-area-inset-bottom)
+        );
 
     text-align: center;
 
@@ -2232,16 +2283,12 @@ footer {
         1px solid rgba(255,255,255,.06);
 }
 
-
 .footer-big {
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-size:
         clamp(38px,7vw,80px);
 }
-
 
 .footer-members {
     margin-top: 25px;
@@ -2252,7 +2299,6 @@ footer {
 
     letter-spacing: 4px;
 }
-
 
 .footer-date {
     margin-top: 10px;
@@ -2288,8 +2334,6 @@ footer {
 ========================================================= */
 
 @media (max-width: 768px) {
-
-    /* NAV */
 
     nav {
         padding-left: 18px;
@@ -2418,30 +2462,9 @@ footer {
         isolation: isolate;
     }
 
-    .member-front {
-        transform:
-            rotateY(0deg)
-            translateZ(2px);
-
-        -webkit-transform:
-            rotateY(0deg)
-            translateZ(2px);
-    }
-
-    .member-back {
-        transform:
-            rotateY(180deg)
-            translateZ(2px);
-
-        -webkit-transform:
-            rotateY(180deg)
-            translateZ(2px);
-    }
-
 
     /* =====================================================
        MOBILE TICKET
-       STILL HORIZONTAL — NOT SQUARE
     ===================================================== */
 
     .trip-section {
@@ -2450,90 +2473,95 @@ footer {
             140px;
     }
 
-
     .ticket-wrap {
         width: 96vw;
 
         max-width: 620px;
 
-        aspect-ratio:
-            2.15 / 1;
+        aspect-ratio: 2.15 / 1;
 
         margin-top: 42px;
     }
-
 
     .ticket-front,
     .ticket-back {
         border-radius: 16px;
     }
 
+    .ticket-front::after,
+    .ticket-back::after {
+        border-radius: 16px;
+    }
 
     .ticket-layout {
         grid-template-columns:
             79% 21%;
     }
 
-
     .ticket-main {
         padding:
             5.5% 5%;
     }
 
+    .ticket-edition {
+        margin-bottom: 7px;
+
+        font-size:
+            clamp(3px,1vw,5px);
+
+        letter-spacing: 2px;
+    }
+
+    .ticket-edition::before {
+        width: 15px;
+    }
 
     .ticket-brand {
         font-size:
-            clamp(24px,8.5vw,48px);
+            clamp(23px,8vw,42px);
 
         letter-spacing: -2px;
     }
-
 
     .ticket-official {
         margin-top: 5px;
 
         font-size:
-            clamp(4px,1.3vw,7px);
+            clamp(4px,1.1vw,6px);
 
         letter-spacing: 2px;
     }
 
-
-    /* MOBILE PHOTOS */
-
-    .ticket-people {
+    .ticket-trio-display {
         left: 5%;
+        right: 4%;
 
-        bottom: 25%;
+        top: 52%;
     }
 
-
-    .ticket-photo {
-        width:
-            clamp(45px,14vw,75px);
-
-        border-width: 2px;
-    }
-
-
-    .ticket-photo + .ticket-photo {
-        margin-left: -11px;
-    }
-
-
-    .ticket-trio {
-        left: 47%;
-
-        bottom: 35%;
+    .ticket-trio-label {
+        margin-bottom: 5px;
 
         font-size:
-            clamp(5px,1.5vw,8px);
+            clamp(3px,.9vw,5px);
 
-        letter-spacing: 1px;
+        letter-spacing: 2px;
     }
 
+    .ticket-trio-names {
+        gap:
+            clamp(5px,1.7vw,10px);
 
-    /* MOBILE TICKET INFO */
+        font-size:
+            clamp(8px,2.5vw,14px);
+
+        letter-spacing: .5px;
+    }
+
+    .ticket-divider-dot {
+        width: 3px;
+        height: 3px;
+    }
 
     .ticket-information {
         left: 5%;
@@ -2541,34 +2569,30 @@ footer {
         bottom: 5%;
 
         gap: 8px;
-    }
 
+        padding-top: 6px;
+    }
 
     .ticket-data-label {
         margin-bottom: 2px;
 
         font-size:
-            clamp(3px,1vw,5px);
+            clamp(3px,.9vw,5px);
 
-        letter-spacing: 1px;
+        letter-spacing: .7px;
     }
-
 
     .ticket-data-value {
         font-size:
             clamp(4px,1.3vw,7px);
 
-        letter-spacing: .4px;
+        letter-spacing: .3px;
     }
-
-
-    /* MOBILE STUB */
 
     .ticket-stub {
         padding:
             14% 6% 10%;
     }
-
 
     .ticket-stub::before,
     .ticket-stub::after {
@@ -2578,66 +2602,51 @@ footer {
         height: 17px;
     }
 
-
     .ticket-stub::before {
         top: -8px;
     }
-
 
     .ticket-stub::after {
         bottom: -8px;
     }
 
-
     .stub-pass {
         font-size:
-            clamp(3px,1vw,5px);
+            clamp(3px,.9vw,5px);
 
         letter-spacing: 1px;
     }
 
-
     .stub-number {
         font-size:
-            clamp(10px,3.6vw,18px);
+            clamp(10px,3.5vw,18px);
     }
-
 
     .stub-barcode {
         width: 65%;
-
-        margin:
-            10% auto 7%;
     }
-
 
     .stub-code {
         font-size:
-            clamp(3px,.95vw,5px);
+            clamp(3px,.9vw,5px);
     }
-
 
     .stub-admit {
         font-size:
-            clamp(3px,.9vw,5px);
+            clamp(3px,.8vw,5px);
 
-        letter-spacing: .7px;
+        letter-spacing: .5px;
     }
-
-
-    /* TICKET BACK MOBILE */
 
     .ticket-back {
         padding: 5%;
     }
-
 
     .ticket-back-small {
         font-size: 4px;
 
         letter-spacing: 2px;
     }
-
 
     .ticket-back h3 {
         margin-top: 4px;
@@ -2646,21 +2655,18 @@ footer {
             clamp(19px,6vw,32px);
     }
 
-
     .ticket-rules {
         margin-top: 3%;
 
         gap: 2px 12px;
     }
 
-
     .ticket-rule {
         padding: 4px 0;
 
         font-size:
-            clamp(4px,1.35vw,7px);
+            clamp(4px,1.3vw,7px);
     }
-
 
     .ticket-back-footer {
         left: 5%;
@@ -2668,9 +2674,9 @@ footer {
         bottom: 5%;
 
         font-size:
-            clamp(3px,.9vw,5px);
+            clamp(3px,.8vw,5px);
 
-        letter-spacing: .8px;
+        letter-spacing: .6px;
     }
 
 
@@ -2690,13 +2696,11 @@ footer {
         overflow: hidden;
     }
 
-
     .after-line {
         font-size: 6px;
 
         letter-spacing: 3px;
     }
-
 
     .film-title {
         width: 100%;
@@ -2711,10 +2715,7 @@ footer {
         line-height: .9;
 
         white-space: normal;
-
-        overflow-wrap: normal;
     }
-
 
     .film-subtitle {
         font-size: 5px;
@@ -2723,7 +2724,6 @@ footer {
 
         line-height: 2;
     }
-
 
     .mv-player {
         width: 100%;
@@ -2738,20 +2738,17 @@ footer {
         border-radius: 12px;
     }
 
-
     .mv-content {
         width: 100%;
 
         padding: 10px;
     }
 
-
     .mv-label {
         font-size: 5px;
 
         letter-spacing: 3px;
     }
-
 
     .mv-content h3 {
         font-size:
@@ -2760,25 +2757,21 @@ footer {
         line-height: .9;
     }
 
-
     .mv-content p {
         font-size: 5px;
 
         letter-spacing: 2px;
     }
 
-
     .play-film {
         margin-top: 18px;
 
-        padding:
-            10px 17px;
+        padding: 10px 17px;
 
         font-size: 6px;
 
         letter-spacing: 2px;
     }
-
 
     .film-coming {
         margin-top: 12px;
@@ -2787,7 +2780,6 @@ footer {
 
         letter-spacing: 2px;
     }
-
 
     .film-meta {
         width: 100%;
@@ -2804,7 +2796,7 @@ footer {
     }
 
 
-    /* MUSIC PLAYER */
+    /* MUSIC */
 
     .music-player {
         left: 12px;
@@ -2817,14 +2809,7 @@ footer {
 
         min-width: 190px;
 
-        padding:
-            8px 10px;
-    }
-
-
-    .music-player button {
-        width: 30px;
-        height: 30px;
+        padding: 8px 10px;
     }
 }
 
@@ -2840,40 +2825,20 @@ footer {
         display: none;
     }
 
-
     .member-flip {
         height: 620px;
     }
 
-
-    /*
-       Ticket stays wide.
-    */
-
     .ticket-wrap {
         width: 97vw;
 
-        aspect-ratio:
-            2.08 / 1;
+        aspect-ratio: 2.08 / 1;
     }
-
 
     .ticket-brand {
         font-size:
-            clamp(22px,8vw,38px);
+            clamp(21px,7.8vw,36px);
     }
-
-
-    .ticket-photo {
-        width:
-            clamp(43px,13.5vw,65px);
-    }
-
-
-    .ticket-photo + .ticket-photo {
-        margin-left: -10px;
-    }
-
 
     .film-title {
         font-size:
@@ -2892,26 +2857,13 @@ footer {
         height: 590px;
     }
 
-
     .ticket-wrap {
         width: 98vw;
     }
 
-
-    .ticket-photo {
-        width: 42px;
-    }
-
-
-    .ticket-photo + .ticket-photo {
-        margin-left: -9px;
-    }
-
-
     .ticket-information {
         gap: 5px;
     }
-
 
     .music-player {
         min-width: 175px;
@@ -2931,16 +2883,11 @@ footer {
 }
 
 </style>
-
 </head>
 
 
 <body class="intro-active">
 
-
-<!-- =======================================================
-     BACKGROUND
-======================================================= -->
 
 <div class="noise"></div>
 
@@ -2954,12 +2901,10 @@ footer {
     preload="auto"
     loop
 >
-
     <source
         src="Epic Reveal.mp3"
         type="audio/mpeg"
     >
-
 </audio>
 
 
@@ -3016,8 +2961,6 @@ footer {
     <div class="intro-content">
 
 
-        <!-- 1 -->
-
         <div class="intro-scene">
 
             <p class="intro-small">
@@ -3030,8 +2973,6 @@ footer {
 
         </div>
 
-
-        <!-- 2 -->
 
         <div class="intro-scene">
 
@@ -3046,8 +2987,6 @@ footer {
         </div>
 
 
-        <!-- 3 -->
-
         <div class="intro-scene">
 
             <p class="intro-small">
@@ -3061,8 +3000,6 @@ footer {
         </div>
 
 
-        <!-- 4 -->
-
         <div class="intro-scene">
 
             <p class="intro-small">
@@ -3075,8 +3012,6 @@ footer {
 
         </div>
 
-
-        <!-- 5 -->
 
         <div class="intro-scene intro-final">
 
@@ -3118,7 +3053,6 @@ footer {
         GE / 2026
     </div>
 
-
     <div class="nav-links">
 
         <a href="#countdown">
@@ -3150,7 +3084,6 @@ footer {
     class="hero"
     id="home"
 >
-
 
     <div class="hero-panels">
 
@@ -3230,7 +3163,6 @@ footer {
     class="countdown-section"
     id="countdown"
 >
-
 
     <div class="countdown-bg">
         27
@@ -3348,9 +3280,7 @@ footer {
     <div class="member-grid">
 
 
-        <!-- =================================================
-             DANU
-        ================================================== -->
+        <!-- DANU -->
 
         <div
             class="member-flip"
@@ -3360,8 +3290,6 @@ footer {
             <div class="member-card">
 
 
-                <!-- FRONT -->
-
                 <div class="member-front">
 
                     <img
@@ -3369,11 +3297,9 @@ footer {
                         alt="Danu"
                     >
 
-
                     <span class="member-number">
                         MEMBER / 01
                     </span>
-
 
                     <span class="member-tap">
                         ↻
@@ -3396,11 +3322,8 @@ footer {
 
                     </div>
 
-
                 </div>
 
-
-                <!-- BACK -->
 
                 <div class="member-back danu">
 
@@ -3484,9 +3407,7 @@ footer {
         </div>
 
 
-        <!-- =================================================
-             TAKSHA
-        ================================================== -->
+        <!-- TAKSHA -->
 
         <div
             class="member-flip"
@@ -3496,8 +3417,6 @@ footer {
             <div class="member-card">
 
 
-                <!-- FRONT -->
-
                 <div class="member-front">
 
                     <img
@@ -3505,11 +3424,9 @@ footer {
                         alt="Taksha"
                     >
 
-
                     <span class="member-number">
                         MEMBER / 02
                     </span>
-
 
                     <span class="member-tap">
                         ↻
@@ -3532,11 +3449,8 @@ footer {
 
                     </div>
 
-
                 </div>
 
-
-                <!-- BACK -->
 
                 <div class="member-back taksha">
 
@@ -3620,9 +3534,7 @@ footer {
         </div>
 
 
-        <!-- =================================================
-             SOFIA
-        ================================================== -->
+        <!-- SOFIA -->
 
         <div
             class="member-flip"
@@ -3632,8 +3544,6 @@ footer {
             <div class="member-card">
 
 
-                <!-- FRONT -->
-
                 <div class="member-front">
 
                     <img
@@ -3641,11 +3551,9 @@ footer {
                         alt="Sofia"
                     >
 
-
                     <span class="member-number">
                         MEMBER / 03
                     </span>
-
 
                     <span class="member-tap">
                         ↻
@@ -3668,11 +3576,8 @@ footer {
 
                     </div>
 
-
                 </div>
 
-
-                <!-- BACK -->
 
                 <div class="member-back sofia">
 
@@ -3762,7 +3667,7 @@ footer {
 
 
 <!-- =======================================================
-     EXACT OFFICIAL TRIP PASS
+     DARK NEON OFFICIAL TRIP PASS
 ======================================================= -->
 
 <section
@@ -3791,9 +3696,7 @@ footer {
         <div class="ticket">
 
 
-            <!-- =================================================
-                 TICKET FRONT
-            ================================================== -->
+            <!-- FRONT -->
 
             <div class="ticket-front">
 
@@ -3801,9 +3704,12 @@ footer {
                 <div class="ticket-layout">
 
 
-                    <!-- LEFT SIDE -->
-
                     <div class="ticket-main">
+
+
+                        <div class="ticket-edition">
+                            THE 2026 FRIENDSHIP TOUR
+                        </div>
 
 
                         <h3 class="ticket-brand">
@@ -3812,64 +3718,49 @@ footer {
 
 
                         <p class="ticket-official">
-                            OFFICIAL TRIP PASS
+                            OFFICIAL TRIP PASS · LIMITED EDITION
                         </p>
 
 
-                        <!-- =====================================
-                             YOUR THREE NEW TICKET PHOTOS
-                        ====================================== -->
+                        <!-- NO PHOTOS -->
 
-                        <div class="ticket-people">
+                        <div class="ticket-trio-display">
 
 
-                            <!-- DANU -->
-
-                            <div class="ticket-photo danu">
-
-                                <img
-                                    src="danu-ticket.png"
-                                    alt="Danu"
-                                >
-
-                            </div>
+                            <p class="ticket-trio-label">
+                                ADMIT / THREE
+                            </p>
 
 
-                            <!-- TAKSHA -->
-
-                            <div class="ticket-photo taksha">
-
-                                <img
-                                    src="taksha-ticket.jpg"
-                                    alt="Taksha"
-                                >
-
-                            </div>
+                            <div class="ticket-trio-names">
 
 
-                            <!-- SOFIA -->
+                                <span class="danu">
+                                    DANU
+                                </span>
 
-                            <div class="ticket-photo sofia">
 
-                                <img
-                                    src="sofia-ticket.jpg"
-                                    alt="Sofia"
-                                >
+                                <span class="ticket-divider-dot"></span>
+
+
+                                <span class="taksha">
+                                    TAKSHA
+                                </span>
+
+
+                                <span class="ticket-divider-dot"></span>
+
+
+                                <span class="sofia">
+                                    SOFIA
+                                </span>
+
 
                             </div>
 
 
                         </div>
 
-
-                        <div class="ticket-trio">
-                            DANU × TAKSHA × SOFIA
-                        </div>
-
-
-                        <!-- =====================================
-                             TRIP DETAILS
-                        ====================================== -->
 
                         <div class="ticket-information">
 
@@ -3919,9 +3810,7 @@ footer {
                     </div>
 
 
-                    <!-- =========================================
-                         RIGHT TICKET STUB
-                    ========================================== -->
+                    <!-- STUB -->
 
                     <div class="ticket-stub">
 
@@ -3932,7 +3821,7 @@ footer {
 
 
                         <strong class="stub-number">
-                            TRIO-03
+                            03
                         </strong>
 
 
@@ -3940,7 +3829,7 @@ footer {
 
 
                         <p class="stub-code">
-                            270926 003
+                            270926
                         </p>
 
 
@@ -3958,9 +3847,7 @@ footer {
             </div>
 
 
-            <!-- =================================================
-                 TICKET BACK
-            ================================================== -->
+            <!-- BACK -->
 
             <div class="ticket-back">
 
@@ -4181,7 +4068,7 @@ footer {
 
 
 <!-- =======================================================
-     FLOATING MUSIC PLAYER
+     MUSIC PLAYER
 ======================================================= -->
 
 <div
@@ -4262,7 +4149,7 @@ let experienceStarted = false;
 
 
 /* =========================================================
-   INTRO FUNCTIONS
+   INTRO
 ========================================================= */
 
 function showIntroScene(index) {
@@ -4339,10 +4226,6 @@ function startExperience() {
         .add("hide");
 
 
-    /*
-       START EPIC REVEAL
-    */
-
     introMusic.currentTime = 0;
 
     introMusic.volume = .82;
@@ -4372,16 +4255,8 @@ function startExperience() {
         });
 
 
-    /*
-       INTRO SCENE 1
-    */
-
     showIntroScene(0);
 
-
-    /*
-       INTRO SCENE 2
-    */
 
     scheduleIntro(
         1800,
@@ -4395,10 +4270,6 @@ function startExperience() {
     );
 
 
-    /*
-       INTRO SCENE 3
-    */
-
     scheduleIntro(
         3500,
         function() {
@@ -4410,10 +4281,6 @@ function startExperience() {
         }
     );
 
-
-    /*
-       INTRO SCENE 4
-    */
 
     scheduleIntro(
         5200,
@@ -4427,10 +4294,6 @@ function startExperience() {
     );
 
 
-    /*
-       FINAL REVEAL
-    */
-
     scheduleIntro(
         7000,
         function() {
@@ -4443,10 +4306,6 @@ function startExperience() {
     );
 
 
-    /*
-       OPEN WEBSITE
-    */
-
     scheduleIntro(
         9800,
         finishIntro
@@ -4456,7 +4315,7 @@ function startExperience() {
 
 
 /* =========================================================
-   FINISH / SKIP INTRO
+   FINISH INTRO
 ========================================================= */
 
 function finishIntro() {
@@ -4486,7 +4345,7 @@ function finishIntro() {
 
 
 /* =========================================================
-   MUSIC PLAYER
+   MUSIC
 ========================================================= */
 
 function toggleMusic() {
@@ -4543,11 +4402,6 @@ introMusic.addEventListener(
 /* =========================================================
    COUNTDOWN
 ========================================================= */
-
-/*
-   Malaysia time:
-   27 September 2026
-*/
 
 const gentingDate =
     new Date(
@@ -4686,7 +4540,7 @@ function flipMember(member) {
 
 
 /* =========================================================
-   TRIP PASS FLIP
+   TICKET FLIP
 ========================================================= */
 
 function flipTicket() {
@@ -4700,7 +4554,7 @@ function flipTicket() {
 
 
 /* =========================================================
-   AFTERGLOW FILM
+   AFTERGLOW
 ========================================================= */
 
 const gentingVideo =
@@ -4716,11 +4570,6 @@ const comingSoon =
 let filmAvailable = false;
 
 
-/*
-   If genting-memories.mp4 exists,
-   the film becomes playable.
-*/
-
 gentingVideo.addEventListener(
     "loadedmetadata",
     function() {
@@ -4730,11 +4579,6 @@ gentingVideo.addEventListener(
     }
 );
 
-
-/*
-   Before the trip there is no video.
-   That is okay.
-*/
 
 gentingVideo.addEventListener(
     "error",
@@ -4749,8 +4593,6 @@ gentingVideo.addEventListener(
     }
 );
 
-
-/* PLAY FILM */
 
 function playFilm(event) {
 
@@ -4771,26 +4613,13 @@ function playFilm(event) {
     }
 
 
-    /*
-       Stop background OST
-       when watching the film.
-    */
-
     introMusic.pause();
 
-
-    /*
-       Hide AFTERGLOW cover.
-    */
 
     mvCover
         .classList
         .add("hide");
 
-
-    /*
-       Enable phone/video controls.
-    */
 
     gentingVideo.controls =
         true;
@@ -4802,10 +4631,6 @@ function playFilm(event) {
 
 }
 
-
-/*
-   Show cover again after video.
-*/
 
 gentingVideo.addEventListener(
     "ended",
@@ -4822,5 +4647,4 @@ gentingVideo.addEventListener(
 
 
 </body>
-
 </html>

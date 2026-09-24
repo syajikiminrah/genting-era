@@ -77,6 +77,63 @@ body.intro-active {
 
 
 /* =========================================================
+   SOUND START
+========================================================= */
+
+.sound-start {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(183,119,255,.16), transparent 35%),
+        #030305;
+    transition: opacity .7s ease, visibility .7s ease;
+}
+
+.sound-start.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.sound-start-inner p {
+    margin-bottom: 22px;
+    color: rgba(255,255,255,.55);
+    font-size: 9px;
+    letter-spacing: 5px;
+}
+
+.sound-start button {
+    padding: 16px 28px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    background: rgba(255,255,255,.06);
+    color: white;
+    font: inherit;
+    font-size: 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: .3s ease;
+}
+
+.sound-start button:hover {
+    background: white;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Do not reveal scene 1 until music actually starts */
+body:not(.experience-started) .intro-scene {
+    opacity: 0;
+}
+
+/* =========================================================
    CINEMATIC INTRO
 ========================================================= */
 
@@ -4219,6 +4276,20 @@ footer p {
 
 <body class="intro-active">
 
+<!-- GENTING ERA INTRO MUSIC -->
+<audio id="introMusic" preload="auto">
+    <source src="Epic Reveal.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Browsers require a tap/click before playing sound.
+     This screen starts the music and cinematic intro together. -->
+<div class="sound-start" id="soundStart">
+    <div class="sound-start-inner">
+        <p>THE 2026 FRIENDSHIP TOUR</p>
+        <button type="button" onclick="startExperience()">ENTER WITH SOUND ♪</button>
+    </div>
+</div>
+
 
 <!-- =====================================================
      CINEMATIC INTRO
@@ -5751,172 +5822,89 @@ footer p {
 <script>
 
 /* =========================================================
-   INTRO
+   INTRO + EPIC REVEAL MUSIC SYNC
 ========================================================= */
 
-const introScreen =
-    document.getElementById(
-        "introScreen"
-    );
+const introScreen = document.getElementById("introScreen");
+const introScenes = document.querySelectorAll(".intro-scene");
+const introFlash = document.getElementById("introFlash");
+const introMusic = document.getElementById("introMusic");
+const soundStart = document.getElementById("soundStart");
 
-
-const introScenes =
-    document.querySelectorAll(
-        ".intro-scene"
-    );
-
-
-const introFlash =
-    document.getElementById(
-        "introFlash"
-    );
-
-
-let currentIntroScene = 0;
-
-let introTimer;
-
-
+let introTimeouts = [];
+let experienceStarted = false;
 
 function showIntroScene(index) {
+    introScenes.forEach(scene => scene.classList.remove("active"));
 
-
-    introScenes.forEach(
-        scene => {
-
-            scene.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    if(index < introScenes.length) {
-
-
-        introScenes[index]
-            .classList
-            .add("active");
-
+    if (index < introScenes.length) {
+        introScenes[index].classList.add("active");
     }
-
 }
-
-
 
 function flashIntro(color) {
-
-
-    introFlash.className =
-        "intro-flash";
-
-
+    introFlash.className = "intro-flash";
     void introFlash.offsetWidth;
-
-
-    introFlash.classList.add(
-        "flash-" + color
-    );
-
+    introFlash.classList.add("flash-" + color);
 }
 
-
-
-function nextIntroScene() {
-
-
-    currentIntroScene++;
-
-
-    if(
-        currentIntroScene
-        >=
-        introScenes.length
-    ) {
-
-
-        clearInterval(
-            introTimer
-        );
-
-
-        setTimeout(
-            finishIntro,
-            1800
-        );
-
-
-        return;
-
-    }
-
-
-    showIntroScene(
-        currentIntroScene
-    );
-
-
-    if(currentIntroScene === 1) {
-
-        flashIntro(
-            "pink"
-        );
-
-    }
-
-
-    if(currentIntroScene === 2) {
-
-        flashIntro(
-            "blue"
-        );
-
-    }
-
-
-    if(currentIntroScene === 3) {
-
-        flashIntro(
-            "purple"
-        );
-
-    }
-
+function scheduleIntro(delay, callback) {
+    introTimeouts.push(setTimeout(callback, delay));
 }
 
+function startExperience() {
+    if (experienceStarted) return;
+    experienceStarted = true;
 
+    document.body.classList.add("experience-started");
+    soundStart.classList.add("hide");
 
-introTimer =
-    setInterval(
+    introMusic.currentTime = 0;
+    introMusic.volume = 0.82;
 
-        nextIntroScene,
+    const playPromise = introMusic.play();
+    if (playPromise) {
+        playPromise.catch(() => {
+            /* The intro still runs if a browser refuses audio playback. */
+        });
+    }
 
-        1700
+    /* Music and visuals begin from the same user interaction. */
+    showIntroScene(0);                         // SAVE THE DATE
 
-    );
+    scheduleIntro(1800, () => {
+        showIntroScene(1);                     // THREE GIRLS
+        flashIntro("pink");
+    });
 
+    scheduleIntro(3500, () => {
+        showIntroScene(2);                     // ONE MOUNTAIN
+        flashIntro("blue");
+    });
 
+    scheduleIntro(5200, () => {
+        showIntroScene(3);                     // ONE ERA
+        flashIntro("purple");
+    });
+
+    scheduleIntro(7000, () => {
+        showIntroScene(4);                     // GENTING ERA — BIG REVEAL
+        flashIntro("purple");
+    });
+
+    scheduleIntro(9800, finishIntro);
+}
 
 function finishIntro() {
+    introTimeouts.forEach(clearTimeout);
+    introTimeouts = [];
 
+    introScreen.classList.add("finished");
+    document.body.classList.remove("intro-active");
 
-    clearInterval(
-        introTimer
-    );
-
-
-    introScreen
-        .classList
-        .add("finished");
-
-
-    document.body
-        .classList
-        .remove("intro-active");
-
+    /* Music intentionally keeps playing after the intro
+       while visitors enter the main GENTING ERA page. */
 }
-
 
 /* =========================================================
    COUNTDOWN — MALAYSIA TIME
